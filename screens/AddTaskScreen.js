@@ -89,7 +89,7 @@ export default class AddTaskScreen extends Component<Props> {
             comment: this.state.taskComment,
             isCompleted: false,
             taskId: this.state.taskId,
-            reminderTime: moment(this.state.date).format('MMM, Do YYYY , h:mm a')
+            reminderTime: moment(this.state.date).format('MMM Do YYYY, h:mm:ss a')
 
         });
 

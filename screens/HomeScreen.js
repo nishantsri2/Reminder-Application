@@ -38,8 +38,9 @@ export default class HomeScreen extends Component<Props> {
         NetInfo.isConnected.fetch().then(isConnected => {
             if(isConnected){
                 this.setState({isLoading: true});
-                const taskList = [];
+
                 firebase.database().ref('Users/').on('value', (snapshot) => {
+                    const taskList = [];
                     Object.entries(snapshot.val()).map(([key, value]) => {
                         value['id'] = key;
                         taskList.push(value);
